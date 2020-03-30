@@ -12,7 +12,7 @@ def read_files(path):
             with open(path, 'r', encoding='utf-8') as fil:
                 message = fil.read()
             yield path, message
-            
+
 
 def df_from_dir(path, classification):
     rows = []
@@ -54,7 +54,7 @@ class Predict:
         traindata, categories = create_df(data_directory)
         self.classifier, self.vectorizer = train(traindata)
         print('Trained classifier with categories:', list(categories.keys()))
-        
+
     def predict_one(self, str2predict):
         data_counts = self.vectorizer.transform([str2predict])
         predictions = self.classifier.predict(data_counts)
@@ -62,7 +62,6 @@ class Predict:
 
 
 if __name__ == '__main__':
-    datadir = '/home/ted/tmp/ml/bayesian-classifier/categories/'
-    predict_text = ['Δοκιμαστικό']
+    datadir = './categories/'
     prd = Predict(datadir)
-    print(prd.predict_one('Δοκιμαστικό'))
+    print(prd.predict_one('Ελλάδα 1940 πόλεμος'))
