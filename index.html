@@ -1,41 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Bayesian Classifier</title>
   </head>
 
   <body>
     <div class="container">
-      <form
-        action="http://127.0.0.1:5000/classify"
-        method="POST"
-        id="form"
-        class="form"
-      >
+      <form action="http://127.0.0.1:5000/classify" method="POST" id="form" class="form">
         <h2>Bayesian classifier</h2>
         <p id="categories"></p>
         <div class="form-control">
           <label for="keimeno">Κείμενο για ταξινόμιση</label>
-          <textarea
-            class="textfield"
-            id="keimeno"
-            name="keimeno"
-            onfocus="cleanLabel()"
-          ></textarea>
+          <textarea class="textfield" id="keimeno" name="keimeno" onfocus="cleanLabel()"></textarea>
         </div>
         <div class="form-control">
           <p class="apothidden" id="apot">class</p>
         </div>
 
-        <button name="submit" type="button" onclick="submitform()">
-          Ταξινόμιση
-        </button>
+        <button name="submit" type="button" onclick="submitform()">Ταξινόμιση</button>
       </form>
     </div>
 
     <script src="script.js"></script>
   </body>
+
 </html>

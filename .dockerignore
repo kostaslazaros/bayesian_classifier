@@ -1,0 +1,8 @@
+.git
+__pycache__
+venv
+LICENCE
+README.md
+.vscode
+Pipfile
+Pipfile.lock
