@@ -1,16 +1,15 @@
 FROM python:3.7-slim
 
-copy requirements.txt /tmp/
-
-RUN pip install -r /tmp/requirements.txt && \
-    mkdir bayesclass
+RUN mkdir bayesclass
 
 COPY . /bayesclass
+
+RUN pip install -r /tmp/requirements.txt
 
 RUN chmod +x /bayesclass/start.sh
 
 WORKDIR /bayesclass
 
-EXPOSE 8000
+EXPOSE 5000 8000
 
 CMD ["/bayesclass/start.sh"]
