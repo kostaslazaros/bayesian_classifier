@@ -26,20 +26,19 @@ predictor = bmc.Predict('./categories/')
 predictor.predict('Enter text to classify')
 ```
 
-### From web interface
+### With web interface
 
 To start the rest api server
 
 ```bash
-python flaskapp.py
+./start.sh
 ```
 
-In your browser of choice open index.html
+Go to http://127.0.0.1:8000
 
-
-### From docker
+### web interface from docker
 
 ```bash
 docker build . -t konlazaros/bayesclass
-docker run -d -p 8000:8000 konlazaros/bayesclass
+docker run -d -p 8000:8000 --name bclass konlazaros/bayesclass
 ```
