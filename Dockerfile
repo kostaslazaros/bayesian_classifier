@@ -1,8 +1,8 @@
-FROM python:alpine
+FROM python:3.7-slim
 
-RUN apk --no-cache add build-base python-dev && \ 
-    pip install sklearn pandas flask flask_cors gunicorn && \
-    apk del build-base python-dev && \
+copy requirements.txt /tmp/
+
+RUN pip install -r requrements.txt && \
     mkdir bayesclass
 
 COPY . /bayesclass
