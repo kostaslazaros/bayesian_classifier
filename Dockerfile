@@ -2,7 +2,7 @@ FROM python:3.7-slim
 
 copy requirements.txt /tmp/
 
-RUN pip install -r requrements.txt && \
+RUN pip install -r /tmp/requirements.txt && \
     mkdir bayesclass
 
 COPY . /bayesclass
