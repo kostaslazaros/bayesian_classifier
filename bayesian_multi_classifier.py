@@ -51,9 +51,10 @@ def predict(data, classifier, vectorizer):
 
 class Predict:
     def __init__(self, data_directory):
-        traindata, categories = create_df(data_directory)
+        traindata, categoriesd = create_df(data_directory)
+        self.categories = list(categoriesd.keys())
         self.classifier, self.vectorizer = train(traindata)
-        print('Trained classifier with categories:', list(categories.keys()))
+        print('Trained classifier with categories:', self.categories)
 
     def predict_one(self, str2predict):
         data_counts = self.vectorizer.transform([str2predict])
@@ -62,6 +63,7 @@ class Predict:
 
 
 if __name__ == '__main__':
-    datadir = './categories/'
+    datadir = '/home/ted/tmp/ml/bayesian-classifier/categories/'
+    predict_text = ['Δοκιμαστικό']
     prd = Predict(datadir)
-    print(prd.predict_one('Ελλάδα 1940 πόλεμος'))
+    print(prd.predict_one('Δοκιμαστικό'))
