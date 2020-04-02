@@ -16,6 +16,8 @@ pip install -r requirements.txt
 
 ## Usage
 
+### From command line
+
 From command line run in python interpreter:
 
 ```python
@@ -23,3 +25,13 @@ import bayesian_multi_classifier as bmc
 predictor = bmc.Predict('./categories/')
 predictor.predict('Enter text to classify')
 ```
+
+### From web interface
+
+To start the rest api server
+
+```bash
+python flaskapp.py
+```
+
+In your browser of choice open index.html
