@@ -35,3 +35,11 @@ python flaskapp.py
 ```
 
 In your browser of choice open index.html
+
+
+### From docker
+
+```bash
+docker build . -t konlazaros/bayesclass
+docker run -d -p 8000:8000 konlazaros/bayesclass
+```

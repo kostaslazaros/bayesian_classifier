@@ -1,5 +1,5 @@
 from datetime import datetime
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template, url_for
 from flask_cors import CORS, cross_origin
 from bayesian_multi_classifier import Predict
 DATADIR = './categories/'
@@ -18,10 +18,15 @@ def categories():
 @cross_origin()
 def classify():
     data = request.json
-    now = datetime.now().isoformat()
     if data['keimeno'] == '':
         return jsonify({'predicted': ''})
     return jsonify({'predicted': predictor.predict_one(data['keimeno'])})
+
+
+@app.route('/')
+def basic(name=None):
+    catstr = '(' + ', '.join(predictor.categories) + ')'
+    return render_template('index.html', categor=catstr)
 
 
 if __name__ == '__main__':

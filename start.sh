@@ -1,3 +1,2 @@
 #!/bin/sh
-python flaskapp.py &
-python -m http.server
+gunicorn --bind 0.0.0.0:8000 wsgi:app

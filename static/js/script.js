@@ -22,27 +22,3 @@ function submitform() {
 function cleanLabel() {
   document.getElementById("apot").innerText = "";
 }
-
-var getJSON = function (url, callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', url, true);
-  xhr.responseType = 'json';
-  xhr.onload = function () {
-    var status = xhr.status;
-    if (status === 200) {
-      callback(null, xhr.response);
-    } else {
-      callback(status, xhr.response);
-    }
-  };
-  xhr.send();
-};
-
-getJSON('http://127.0.0.1:5000/categories',
-  function (err, data) {
-    if (err !== null) {
-      document.getElementById("categories").innerText = "";
-    } else {
-      document.getElementById("categories").innerText = "(" + data.categories + ")";
-    }
-  });

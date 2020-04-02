@@ -4,15 +4,15 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
     <title>Bayesian Classifier</title>
   </head>
 
   <body>
     <div class="container">
-      <form action="http://127.0.0.1:5000/classify" method="POST" id="form" class="form">
+      <form action="{{ url_for('classify') }}" method="POST" id="form" class="form">
         <h2>Bayesian classifier</h2>
-        <p id="categories"></p>
+        <p>{{ categor }}</p>
         <div class="form-control">
           <label for="keimeno">Κείμενο για ταξινόμιση</label>
           <textarea class="textfield" id="keimeno" name="keimeno" onfocus="cleanLabel()"></textarea>
@@ -25,7 +25,7 @@
       </form>
     </div>
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   </body>
 
 </html>
