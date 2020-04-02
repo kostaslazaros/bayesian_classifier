@@ -38,7 +38,7 @@ var getJSON = function(url, callback) {
   xhr.send();
 };
 
-getJSON('http://192.168.1.109:5000/categories', function(err, data) {
+getJSON('http://127.0.0.1:5000/categories', function(err, data) {
   if (err !== null) {
     document.getElementById('categories').innerText = '';
   } else {
