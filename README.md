@@ -36,9 +36,15 @@ To start the rest api server
 
 Go to http://127.0.0.1:8000
 
-### web interface from docker
+### create docker image and run
 
 ```bash
-docker build . -t konlazaros/bayesclass
-docker run -d -p 8000:8000 --name bclass konlazaros/bayesclass
+docker build . -t konlaz/bayesian_classifier
+docker run -d -p 8000:8000 --name bclass konlaz/bayesian_classifier
+```
+
+### get docker image from dockerhub and run
+
+```bash
+docker run -d -p 8000:8000 --name bclass konlaz/bayesian_classifier
 ```
