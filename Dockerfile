@@ -1,6 +1,8 @@
 FROM python:alpine
 
-RUN pip install sklearn pandas flask flask_cors && \
+RUN apk --no-cache add build-base python-dev && \ 
+    pip install sklearn pandas flask flask_cors && \
+    apk del build-base python-dev && \
     mkdir bayesclass
 
 COPY . /bayesclass
